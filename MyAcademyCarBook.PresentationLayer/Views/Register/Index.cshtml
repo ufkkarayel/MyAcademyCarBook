@@ -41,7 +41,7 @@
                             <input type="email" class="form-input" asp-for="Email" placeholder="Mail Adresiniz" />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-input" asp-for="Password" placeholder="Parolanızı Giriniz" />
+                            <input type="password" class="form-input" required asp-for="Password" placeholder="Parolanızı Giriniz" />
                         </div>
                         
                         <div class="form-group">
@@ -51,6 +51,7 @@
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Kayıt Ol" />
                         </div>
+                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                     </form>
                     <p class="loginhere">
                         Bir hesabın var mı? <a href="#" class="loginhere-link">Giriş Yap</a>
