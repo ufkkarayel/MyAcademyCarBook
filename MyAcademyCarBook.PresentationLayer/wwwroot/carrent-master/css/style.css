@@ -224,7 +224,7 @@ a {
   transition: .3s all ease;
   text-decoration: none; }
   a:hover {
-    text-decoration: none; }
+    color: blue; }
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
