@@ -1,0 +1,43 @@
+﻿@model List<MyAcademyCarBook.EntityLayer.Concrete.Brand>
+@{
+    ViewData["Title"] = "GetBrandSearchByName";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<form asp-action="GetBrandSearchByName" method="get" asp-controller="Brand">
+    <div>
+        <p>
+            <b>Lütfen Marka Adını Giriniz</b> <input type="text" value="@ViewData["CurrentFilter"]" name="p" class="form-control" style="border: 1px solid #222" />
+            <br />
+            <input type="submit" value="Marka Getir" class="btn btn-dark" />
+        </p>
+    </div>
+</form>
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Marka Adı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BrandID</td>
+            <td>@item.BrandName</td>
+            <td>@item.Status</td>
+            <td><a href="/Brand/DeleteBrand/@item.BrandID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Brand/UpdateBrand/@item.BrandID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<button class="btn btn-info">Yeni Araç Girişi</button>
+
+
+
